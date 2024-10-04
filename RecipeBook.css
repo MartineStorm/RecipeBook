@@ -1,36 +1,150 @@
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #f4f4f4;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
     padding: 20px;
 }
 
-#searchInput, #filterCategory {
+header {
+    text-align: center;
     margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #333;
+}
+
+.search-filter-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+input, select {
     padding: 10px;
-    width: 100%;
-    max-width: 300px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 45%;
+}
+
+.controls {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#addRecipeButton {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+#addRecipeButton:hover {
+    background-color: #0056b3;
 }
 
 #recipeContainer {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 20px;
 }
 
 .recipe-card {
     background-color: white;
-    padding: 15px;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.recipe-card:hover {
+    transform: translateY(-5px);
+    transition: 0.3s ease-in-out;
+}
+
+.recipe-image {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
     border-radius: 8px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.recipe-title {
-    font-size: 1.2em;
-    margin-bottom: 10px;
+h3 {
+    margin-top: 10px;
+    font-size: 1.4rem;
+    color: #333;
 }
 
-.recipe-category {
-    font-style: italic;
-    color: #666;
+p {
+    font-size: 1rem;
+    color: #555;
 }
 
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 10px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label, input, select, button {
+    margin: 10px 0;
+}
+
+button[type="submit"] {
+    background-color: #28a745;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #218838;
+}

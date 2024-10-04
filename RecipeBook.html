@@ -3,24 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recipe Book</title>
+    <title>Advanced Recipe Book</title>
     <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body>
-    <h1>Recipe Book</h1>
-    
-    <label for="searchInput">Search for a recipe:</label>
-    <input type="text" id="searchInput" placeholder="Search for a recipe..." />
-    
-    <label for="filterCategory">Filter by category:</label>
-    <select id="filterCategory" aria-label="Recipe category">
-        <option value="all">All</option>
-        <option value="dessert">Dessert</option>
-        <option value="main course">Main Course</option>
-        <option value="appetizer">Appetizer</option>
-    </select>
+    <div class="container">
+        <header>
+            <h1>Recipe Book</h1>
+            <div class="search-filter-container">
+                <input type="text" id="searchInput" placeholder="Search recipes..." />
+                
+                <select id="filterCategory" aria-label="Recipe category">
+                    <option value="all">All</option>
+                    <option value="dessert">Dessert</option>
+                    <option value="main course">Main Course</option>
+                    <option value="appetizer">Appetizer</option>
+                </select>
+            </div>
+            <div class="controls">
+                <button id="addRecipeButton">Add Recipe</button>
+            </div>
+        </header>
 
-    <div id="recipeContainer"></div>
+        <main id="recipeContainer"></main>
+
+        <!-- Modal for adding new recipe -->
+        <div id="recipeModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Add New Recipe</h2>
+                <form id="addRecipeForm">
+                    <label for="recipeTitle">Recipe Title:</label>
+                    <input type="text" id="recipeTitle" required>
+
+                    <label for="recipeIngredients">Ingredients (comma separated):</label>
+                    <input type="text" id="recipeIngredients" required>
+
+                    <label for="recipeCategory">Category:</label>
+                    <select id="recipeCategory">
+                        <option value="dessert">Dessert</option>
+                        <option value="main course">Main Course</option>
+                        <option value="appetizer">Appetizer</option>
+                    </select>
+
+                    <label for="recipeImage">Image URL:</label>
+                    <input type="text" id="recipeImage" placeholder="http://example.com/image.jpg" required>
+
+                    <button type="submit">Add Recipe</button>
+                </form>
+            </div>
+        </div>
+    </div>
 
     <script src="app.js"></script>
 </body>
